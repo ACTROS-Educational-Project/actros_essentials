@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>softarq_msgs</name>
+  <name>actros_msgs</name>
  <version>0.0.1</version>
   <description>The messages for softarq course</description>
 

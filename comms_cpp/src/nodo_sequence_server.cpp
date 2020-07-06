@@ -1,17 +1,17 @@
 #include <ros/ros.h>
 #include <actionlib/server/simple_action_server.h>
-#include <softarq_msgs/SequenceAction.h>
+#include <actros_msgs/SequenceAction.h>
 
 class SequenceAction
 {
 protected:
 
   ros::NodeHandle nh_;
-  actionlib::SimpleActionServer<softarq_msgs::SequenceAction> as_;
+  actionlib::SimpleActionServer<actros_msgs::SequenceAction> as_;
   std::string action_name_;
 
-  softarq_msgs::SequenceFeedback feedback_;
-  softarq_msgs::SequenceResult result_;
+  actros_msgs::SequenceFeedback feedback_;
+  actros_msgs::SequenceResult result_;
 
 public:
 
@@ -26,7 +26,7 @@ public:
   {
   }
 
-  void executeCB(const softarq_msgs::SequenceGoalConstPtr &goal)
+  void executeCB(const actros_msgs::SequenceGoalConstPtr &goal)
   {
     ros::Rate r(10);
     bool success = true;

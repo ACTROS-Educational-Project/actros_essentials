@@ -1,5 +1,5 @@
 #include "ros/ros.h"
-#include "softarq_msgs/Point.h"
+#include "actros_msgs/Point.h"
 
 class Listener
 {
@@ -9,7 +9,7 @@ public:
 		sub_ = n_.subscribe("/point", 1, &Listener::messageCallback, this);
 	}
 
-	void messageCallback(const softarq_msgs::Point::ConstPtr& msg)
+	void messageCallback(const actros_msgs::Point::ConstPtr& msg)
 	{
 		ROS_INFO("point: (%lf, %lf, %lf)", msg->x, msg->y, msg->z);
 	}

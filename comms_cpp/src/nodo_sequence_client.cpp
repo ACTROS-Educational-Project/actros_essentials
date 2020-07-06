@@ -1,8 +1,8 @@
 #include <ros/ros.h>
 #include <actionlib/client/simple_action_client.h>
-#include <softarq_msgs/SequenceAction.h>
+#include <actros_msgs/SequenceAction.h>
 
-typedef actionlib::SimpleActionClient<softarq_msgs::SequenceAction> Client;
+typedef actionlib::SimpleActionClient<actros_msgs::SequenceAction> Client;
 
 class MyNode
 {
@@ -17,7 +17,7 @@ public:
 
 	void doWork(long int until)
 	{
-		softarq_msgs::SequenceGoal goal;
+		actros_msgs::SequenceGoal goal;
 		goal.end_limit = until;
 
 		ac.sendGoal(goal,
@@ -27,13 +27,13 @@ public:
 
 	}
 
-	void feedbackCb(const softarq_msgs::SequenceFeedbackConstPtr& feedback)
+	void feedbackCb(const actros_msgs::SequenceFeedbackConstPtr& feedback)
 	{
 		ROS_INFO("Current count %ld", feedback->current);
 	}
 
 	void doneCb(const actionlib::SimpleClientGoalState& state,
-			const softarq_msgs::SequenceResultConstPtr& result)
+			const actros_msgs::SequenceResultConstPtr& result)
 	{
 		ROS_INFO("Finished in state [%s]", state.toString().c_str());
 		ROS_INFO("Answer: %ld", result->last);

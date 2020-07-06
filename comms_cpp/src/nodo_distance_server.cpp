@@ -1,10 +1,10 @@
 #include "ros/ros.h"
-#include "softarq_msgs/Distance.h"
+#include "actros_msgs/Distance.h"
 
 #include <math.h>
 
-bool distance(softarq_msgs::Distance::Request  &req,
-         softarq_msgs::Distance::Response &res)
+bool distance(actros_msgs::Distance::Request  &req,
+         actros_msgs::Distance::Response &res)
 {
   double comp_x, comp_y, comp_z;
 

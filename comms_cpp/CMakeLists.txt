@@ -5,13 +5,13 @@ project(comms_cpp)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
-  softarq_msgs
+  actros_msgs
   actionlib
   actionlib_msgs
 )
 
 catkin_package(
-  CATKIN_DEPENDS roscpp std_msgs actionlib_msgs softarq_msgs
+  CATKIN_DEPENDS roscpp std_msgs actionlib_msgs actros_msgs
 )
 
 include_directories(
@@ -32,9 +32,9 @@ target_link_libraries(nodo_distance_server ${catkin_LIBRARIES})
 target_link_libraries(nodo_sequence_server ${catkin_LIBRARIES})
 target_link_libraries(nodo_sequence_client ${catkin_LIBRARIES})
 
-add_dependencies(nodo_point_sub softarq_msgs_generate_messages_cpp)
-add_dependencies(nodo_point_pub softarq_msgs_generate_messages_cpp)
-add_dependencies(nodo_distance_client softarq_msgs_generate_messages_cpp)
-add_dependencies(nodo_distance_server softarq_msgs_generate_messages_cpp)
-add_dependencies(nodo_sequence_server softarq_msgs_generate_messages_cpp)
-add_dependencies(nodo_sequence_client softarq_msgs_generate_messages_cpp)
+add_dependencies(nodo_point_sub actros_msgs_generate_messages_cpp)
+add_dependencies(nodo_point_pub actros_msgs_generate_messages_cpp)
+add_dependencies(nodo_distance_client actros_msgs_generate_messages_cpp)
+add_dependencies(nodo_distance_server actros_msgs_generate_messages_cpp)
+add_dependencies(nodo_sequence_server actros_msgs_generate_messages_cpp)
+add_dependencies(nodo_sequence_client actros_msgs_generate_messages_cpp)

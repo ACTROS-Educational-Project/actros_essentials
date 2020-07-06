@@ -1,5 +1,5 @@
 #include "ros/ros.h"
-#include "softarq_msgs/Distance.h"
+#include "actros_msgs/Distance.h"
 
  #include <stdlib.h>
 
@@ -13,8 +13,8 @@ int main(int argc, char **argv)
   }
 
   ros::NodeHandle n;
-  ros::ServiceClient client = n.serviceClient<softarq_msgs::Distance>("distance");
-  softarq_msgs::Distance srv;
+  ros::ServiceClient client = n.serviceClient<actros_msgs::Distance>("distance");
+  actros_msgs::Distance srv;
 
   srv.request.a.x = atof(argv[1]);
   srv.request.a.y = atof(argv[2]);

@@ -1,0 +1,4 @@
+actros_msgs/Point a
+actros_msgs/Point b
+---
+float64 distance
