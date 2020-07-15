@@ -10,7 +10,6 @@
     <arg name="use_sim_time" value="true"/>
     <arg name="debug" value="false"/>
     <arg name="world_name" value="$(arg world_name)"/>
-    <arg name="gui" value="false"/>
   </include>
 
   <include file="$(find robots)/launch/includes/robot.launch.xml">
